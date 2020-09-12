@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TxtDictionary: Dictionary{
+public class TxtDictionary: Dictionary{
     
     private var __misspelledWords : [String: String]
 

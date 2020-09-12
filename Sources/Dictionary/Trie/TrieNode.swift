@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TrieNode{
+public class TrieNode{
     
     private var __children: [Character: TrieNode] = [:]
     private var __words: Set<Word> = []

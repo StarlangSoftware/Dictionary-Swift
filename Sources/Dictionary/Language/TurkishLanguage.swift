@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TurkishLanguage: Language{
+public class TurkishLanguage: Language{
     
     public static let VOWELS = "aeıioöuüâî"
     public static let BACK_VOWELS = "aıouâ"

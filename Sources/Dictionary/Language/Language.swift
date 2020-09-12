@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Language{
+public class Language{
     
     public static let DIGITS = "0123456789"
     public static let ARITHMETIC_CHARACTERS = "+-*/="

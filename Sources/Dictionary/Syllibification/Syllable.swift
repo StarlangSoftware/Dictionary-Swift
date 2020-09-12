@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Syllable{
+public class Syllable{
     
     private var __syllable: String
 

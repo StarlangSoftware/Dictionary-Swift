@@ -7,7 +7,7 @@
 
 import Foundation
 
-class VectorizedDictionary: Dictionary{
+public class VectorizedDictionary: Dictionary{
     
     /**
     A constructor of VectorizedDictionary class which calls its super class Dictionary.

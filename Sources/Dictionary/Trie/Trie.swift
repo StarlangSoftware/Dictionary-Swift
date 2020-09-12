@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Trie{
+public class Trie{
     
     private var __rootNode: TrieNode
     

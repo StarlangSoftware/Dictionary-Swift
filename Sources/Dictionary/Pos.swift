@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Pos : String, CaseIterable{
+public enum Pos : String, CaseIterable{
     /**
      * Adjective.
      */

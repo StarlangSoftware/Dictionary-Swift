@@ -8,7 +8,7 @@
 import Foundation
 import Math
 
-class VectorizedWord : Word{
+public class VectorizedWord : Word{
     
     private var __vector: Vector
 

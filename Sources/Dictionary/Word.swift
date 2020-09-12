@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Word : Comparable, Equatable, Hashable{
+public class Word : Comparable, Equatable, Hashable{
     
     private var name: String
 
@@ -20,15 +20,15 @@ class Word : Comparable, Equatable, Hashable{
         self.name = name
     }
 
-    static func < (lhs: Word, rhs: Word) -> Bool {
+    public static func < (lhs: Word, rhs: Word) -> Bool {
         return lhs.name < rhs.name
     }
 
-    static func == (lhs: Word, rhs: Word) -> Bool {
+    public static func == (lhs: Word, rhs: Word) -> Bool {
         return lhs.name == rhs.name
     }
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(name)
     }
     

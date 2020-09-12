@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TxtWord : Word{
+public class TxtWord : Word{
     
     private var __flags: [String] = []
 

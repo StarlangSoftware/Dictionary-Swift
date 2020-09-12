@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Dictionary{
+public class Dictionary{
     
     var words: [Word] = []
     var filename: String = ""

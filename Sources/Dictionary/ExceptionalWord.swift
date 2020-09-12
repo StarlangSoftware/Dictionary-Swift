@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ExceptionalWord : Word{
+public class ExceptionalWord : Word{
     
     private var __root: String
     private var __pos: Pos
