@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Word : Comparable, Equatable, Hashable{
+open class Word : Comparable, Equatable, Hashable{
     
     private var name: String
 
