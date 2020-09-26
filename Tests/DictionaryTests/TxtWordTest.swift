@@ -23,25 +23,25 @@ final class TxtWordTest: XCTestCase {
         XCTAssertEqual(5, verbs["F2P1-NO-REF"])
         XCTAssertEqual(1, verbs["F3P1-NO-REF"])
         XCTAssertEqual(1, verbs["F4P1-NO-REF"])
-        XCTAssertEqual(17, verbs["F4PR-NO-REF"])
-        XCTAssertEqual(3, verbs["F4PL-NO-REF"])
-        XCTAssertEqual(74, verbs["F4PW-NO-REF"])
-        XCTAssertEqual(11, verbs["F5PL-NO-REF"])
-        XCTAssertEqual(121, verbs["F5PR-NO-REF"])
+        XCTAssertEqual(14, verbs["F4PR-NO-REF"])
+        XCTAssertEqual(2, verbs["F4PL-NO-REF"])
+        XCTAssertEqual(67, verbs["F4PW-NO-REF"])
+        XCTAssertEqual(10, verbs["F5PL-NO-REF"])
+        XCTAssertEqual(111, verbs["F5PR-NO-REF"])
         XCTAssertEqual(1, verbs["F5PW-NO-REF"])
         XCTAssertEqual(2, verbs["F1P1"])
-        XCTAssertEqual(12, verbs["F2P1"])
+        XCTAssertEqual(11, verbs["F2P1"])
         XCTAssertEqual(4, verbs["F3P1"])
         XCTAssertEqual(1, verbs["F4P1"])
         XCTAssertEqual(1, verbs["F5P1"])
         XCTAssertEqual(7, verbs["F6P1"])
         XCTAssertEqual(2, verbs["F2PL"])
-        XCTAssertEqual(51, verbs["F4PL"])
-        XCTAssertEqual(19, verbs["F5PL"])
-        XCTAssertEqual(185, verbs["F4PR"])
-        XCTAssertEqual(849, verbs["F5PR"])
-        XCTAssertEqual(1474, verbs["F4PW"])
-        XCTAssertEqual(14, verbs["F5PW"])
+        XCTAssertEqual(49, verbs["F4PL"])
+        XCTAssertEqual(18, verbs["F5PL"])
+        XCTAssertEqual(173, verbs["F4PR"])
+        XCTAssertEqual(808, verbs["F5PR"])
+        XCTAssertEqual(1396, verbs["F4PW"])
+        XCTAssertEqual(13, verbs["F5PW"])
     }
 
     func testIsNominal(){
@@ -52,7 +52,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(29119, count)
+        XCTAssertEqual(30593, count)
     }
 
     func testIsPassive(){
@@ -85,7 +85,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(106, count)
+        XCTAssertEqual(104, count)
     }
 
     func testIsDuplicate(){
@@ -96,7 +96,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(106, count)
+        XCTAssertEqual(104, count)
     }
 
     func testIsAdjective(){
@@ -107,7 +107,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(8063, count)
+        XCTAssertEqual(9671, count)
     }
 
     func testIsPronoun(){
@@ -118,7 +118,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(49, count)
+        XCTAssertEqual(48, count)
     }
 
     func testIsQuestion(){
@@ -140,7 +140,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(4859, count)
+        XCTAssertEqual(5041, count)
     }
 
     func testIsPortmanteau(){
@@ -173,7 +173,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(55, count)
+        XCTAssertEqual(48, count)
     }
 
     func testIsAdverb(){
@@ -184,7 +184,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(1804, count)
+        XCTAssertEqual(1845, count)
     }
 
     func testIsPostP(){
@@ -195,7 +195,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(49, count)
+        XCTAssertEqual(47, count)
     }
 
     func testIsPortmanteauEndingWithSI(){
@@ -250,7 +250,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(19062, count)
+        XCTAssertEqual(19011, count)
     }
 
     func testIsPlural(){
@@ -283,7 +283,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(316, count)
+        XCTAssertEqual(315, count)
     }
 
     func testObeysAndNotObeysVowelHarmonyDuringAgglutination(){
@@ -305,7 +305,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5468 + 90 - 1, count)
+        XCTAssertEqual(5529, count)
     }
 
     func testRootSoftenAndNotSoftenDuringSuffixation(){
@@ -316,7 +316,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(16, count)
+        XCTAssertEqual(14, count)
     }
 
     func testVerbSoftenDuringSuffixation(){
@@ -327,7 +327,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(90, count)
+        XCTAssertEqual(87, count)
     }
 
     func testNounSoftenDuringSuffixation(){
@@ -338,7 +338,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5468, count)
+        XCTAssertEqual(5443, count)
     }
 
     func testEndingKChangesIntoG(){
@@ -360,7 +360,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(34, count)
+        XCTAssertEqual(31, count)
     }
 
     func testDuplicatesDuringSuffixation(){
@@ -393,7 +393,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(170, count)
+        XCTAssertEqual(167, count)
     }
 
     func testLastIDropsAndNotDropDuringSuffixation(){
@@ -404,7 +404,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(7, count)
+        XCTAssertEqual(4, count)
     }
 
     func testTakesRelativeSuffixKi(){
@@ -415,7 +415,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(20, count)
+        XCTAssertEqual(16, count)
     }
 
     func testTakesRelativeSuffixKu(){
@@ -437,7 +437,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(12, count)
+        XCTAssertEqual(11, count)
     }
 
     func testVowelAChangesToIDuringYSuffixation(){
@@ -448,7 +448,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(1363, count)
+        XCTAssertEqual(1299, count)
     }
 
     func testVowelEChangesToIDuringYSuffixation(){
@@ -470,7 +470,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(52, count)
+        XCTAssertEqual(51, count)
     }
 
     func testTakesSuffixDIRAsFactitive(){
@@ -481,7 +481,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(207, count)
+        XCTAssertEqual(197, count)
     }
 
     func testShowsSuRegularities(){
@@ -492,7 +492,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(6, count)
+        XCTAssertEqual(5, count)
     }
 
     static var allTests = [

@@ -35,7 +35,7 @@ final class DictionaryTest: XCTestCase {
     func testSize(){
         XCTAssertEqual(29, self.lowerCaseDictionary.size())
         XCTAssertEqual(58, self.mixedCaseDictionary.size())
-        XCTAssertEqual(58731, self.dictionary.size())
+        XCTAssertEqual(62112, self.dictionary.size())
     }
 
     func testGetWord(){
