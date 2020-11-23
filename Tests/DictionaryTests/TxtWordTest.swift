@@ -52,7 +52,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(30593, count)
+        XCTAssertEqual(30601, count)
     }
 
     func testIsPassive(){
@@ -107,7 +107,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(9671, count)
+        XCTAssertEqual(9679, count)
     }
 
     func testIsPronoun(){
@@ -118,7 +118,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(48, count)
+        XCTAssertEqual(49, count)
     }
 
     func testIsQuestion(){
@@ -140,7 +140,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5041, count)
+        XCTAssertEqual(5042, count)
     }
 
     func testIsPortmanteau(){
@@ -173,7 +173,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(48, count)
+        XCTAssertEqual(51, count)
     }
 
     func testIsAdverb(){
@@ -184,7 +184,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(1845, count)
+        XCTAssertEqual(1849, count)
     }
 
     func testIsPostP(){
@@ -195,7 +195,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(47, count)
+        XCTAssertEqual(49, count)
     }
 
     func testIsPortmanteauEndingWithSI(){
@@ -250,7 +250,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(19011, count)
+        XCTAssertEqual(19012, count)
     }
 
     func testIsPlural(){
