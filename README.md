@@ -40,3 +40,55 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build** option from **Product** menu. After compilation process, user can run Dictionary-Swift.
+
+Detailed Description
+============
+
++ [TxtDictionary](#txtdictionary)
++ [TxtWord](#txtword)
++ [SyllableList](#syllablelist)
+
+## TxtDictionary
+
+Dictionary is used in order to load Turkish dictionary or a domain specific dictionary. In addition, misspelled words and the true forms of the misspelled words can also be loaded. 
+
+To load the Turkish dictionary and the misspelled words dictionary,
+
+	a = TxtDictionary()
+	
+To load the domain specific dictionary and the misspelled words dictionary,
+
+	init(fileName: String, misspelledFileName: String, comparator: @escaping (Word, Word) throws -> Bool)
+
+And to see if the dictionary involves a specific word, Word getWord is used.
+
+	func getWord(name: String) -> Word?
+
+## TxtWord
+
+The word features:
+To see whether the TxtWord class of the dictionary is a noun or not,
+
+	func isNominal() -> Bool
+
+To see whether it is an adjective,
+
+	func isAdjective() -> Bool
+
+To see whether it is a portmanteau word,
+
+	func isPortmanteau() -> Bool
+
+To see whether it obeys vowel harmony,
+
+	func notObeysVowelHarmonyDuringAgglutination() -> Bool
+
+And, to see whether it softens when it get affixes, the following is used.
+
+	func rootSoftenDuringSuffixation() -> Bool
+
+## SyllableList
+
+To syllabify the word, SyllableList class is used.
+
+	init(word: String)
