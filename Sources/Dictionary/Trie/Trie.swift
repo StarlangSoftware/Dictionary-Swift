@@ -68,7 +68,7 @@ public class Trie{
 
     - Returns: nil if TrieNode is None, otherwise portmanteau word.
     */
-    public func getCompundWordStartingWith(_hash: String) -> TxtWord?{
+    public func getCompoundWordStartingWith(_hash: String) -> TxtWord?{
         var current : TrieNode? = self.__rootNode
         for i in 0..<_hash.count{
             current = current!.getChild(ch: Word.charAt(s: _hash, i: i))
