@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TxtWord.swift
 //  
 //
 //  Created by Olcay Taner YILDIZ on 6.09.2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TxtWord : Word{
+public class TxtWord : Word, NSCopying{
     
     private var __flags: [String] = []
 
@@ -28,6 +28,15 @@ public class TxtWord : Word{
         self.__flags.append(flag)
     }
 
+    public func copy(with zone: NSZone? = nil) -> Any {
+        let copy : TxtWord = TxtWord(name: self.getName())
+        copy.__flags = []
+        for flag in self.__flags{
+            copy.__flags.append(flag)
+        }
+        return copy
+    }
+    
     /**
     The addFlag method takes a String flag as an input and adds given flag to the flags list.
 
