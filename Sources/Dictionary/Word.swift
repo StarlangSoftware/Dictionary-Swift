@@ -75,6 +75,56 @@ open class Word : Comparable, Equatable, Hashable{
         return s[s.index(s.startIndex, offsetBy: i)];
     }
     
+    public static func uppercase(s: String) -> String{
+        var result : String = ""
+        for i in 0..<s.count{
+            switch charAt(s: s, i: i) {
+                case "ç":
+                    result += "Ç"
+                case "ö":
+                    result += "Ö"
+                case "ğ":
+                    result += "Ğ"
+                case "ü":
+                    result += "Ü"
+                case "ş":
+                    result += "Ş"
+                case "ı":
+                    result += "I"
+                case "i":
+                    result += "İ"
+                default:
+                    result += charAt(s: s, i: i).uppercased()
+            }
+        }
+        return result
+    }
+
+    public static func lowercase(s: String) -> String{
+        var result : String = ""
+        for i in 0..<s.count{
+            switch charAt(s: s, i: i) {
+                case "Ç":
+                    result += "ç"
+                case "Ö":
+                    result += "ö"
+                case "Ğ":
+                    result += "ğ"
+                case "Ü":
+                    result += "ü"
+                case "Ş":
+                    result += "ş"
+                case "I":
+                    result += "ı"
+                case "İ":
+                    result += "i"
+                default:
+                    result += charAt(s: s, i: i).lowercased()
+            }
+        }
+        return result
+    }
+
     /**
     The isCapital method takes a String surfaceForm as an input and returns true if the character at first index of
     surfaceForm is a capital letter, false otherwise.

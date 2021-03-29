@@ -170,6 +170,14 @@ final class WordTest: XCTestCase {
         XCTAssertTrue(Word.isTime(surfaceForm: "1934"))
     }
     
+    func testUppercase(){
+        XCTAssertEqual(Word.uppercase(s: "abcdefghjklmnoprstuvyzçöğüşıi"), "ABCDEFGHJKLMNOPRSTUVYZÇÖĞÜŞIİ")
+    }
+
+    func testLowercase(){
+        XCTAssertEqual(Word.lowercase(s: "ABCDEFGHJKLMNOPRSTUVYZÇÖĞÜŞIİ"), "abcdefghjklmnoprstuvyzçöğüşıi")
+    }
+
     static var allTests = [
         ("testExample1", testCharCount),
         ("testExample2", testIsCapital),
@@ -178,5 +186,7 @@ final class WordTest: XCTestCase {
         ("testExample5", testIsOrganization),
         ("testExample6", testIsMoney),
         ("testExample7", testIsTime),
+        ("testExample8", testUppercase),
+        ("testExample9", testLowercase),
     ]
 }
