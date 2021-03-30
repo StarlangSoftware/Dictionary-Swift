@@ -40,7 +40,7 @@ open class Word : Comparable, Equatable, Hashable{
     String
         the name variable.
     */
-    public func description() -> String{
+    open func description() -> String{
         return self.name
     }
 
