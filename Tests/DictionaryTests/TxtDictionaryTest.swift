@@ -18,6 +18,7 @@ final class TxtDictionaryTest: XCTestCase {
     func testPrepareTrie(){
         let trie : Trie = self.dictionary.prepareTrie()
         XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "bana").contains(Word(name: "ben")))
+        XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "sana").contains(Word(name: "sen")))
         XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "metni").contains(Word(name: "metin")))
         XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "ağzı").contains(Word(name: "ağız")))
         XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "ayrıldı").contains(Word(name: "ayır")))

@@ -301,6 +301,9 @@ public class TxtDictionary: Dictionary{
                 if root == "ben"{
                     result.addWord(word: "bana", root: word)
                 }
+                if root == "sen"{
+                    result.addWord(word: "sana", root: word)
+                }
                 let rootWithoutLast : String = String(root[..<root.index(root.startIndex, offsetBy: length - 1)])
                 var rootWithoutLastTwo : String
                 if length > 1{

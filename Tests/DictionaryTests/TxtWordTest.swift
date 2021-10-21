@@ -52,7 +52,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(30601, count)
+        XCTAssertEqual(30603, count)
     }
 
     func testIsPassive(){
@@ -85,7 +85,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(104, count)
+        XCTAssertEqual(106, count)
     }
 
     func testIsDuplicate(){
@@ -107,7 +107,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(9679, count)
+        XCTAssertEqual(9687, count)
     }
 
     func testIsPronoun(){
@@ -140,7 +140,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5042, count)
+        XCTAssertEqual(5043, count)
     }
 
     func testIsPortmanteau(){
@@ -173,7 +173,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(51, count)
+        XCTAssertEqual(52, count)
     }
 
     func testIsAdverb(){
@@ -250,7 +250,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(19012, count)
+        XCTAssertEqual(19014, count)
     }
 
     func testIsPlural(){
@@ -305,7 +305,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5529, count)
+        XCTAssertEqual(5530, count)
     }
 
     func testRootSoftenAndNotSoftenDuringSuffixation(){
@@ -338,7 +338,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5443, count)
+        XCTAssertEqual(5444, count)
     }
 
     func testEndingKChangesIntoG(){
@@ -448,7 +448,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(1299, count)
+        XCTAssertEqual(1301, count)
     }
 
     func testVowelEChangesToIDuringYSuffixation(){
