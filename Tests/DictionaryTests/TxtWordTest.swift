@@ -96,7 +96,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(104, count)
+        XCTAssertEqual(106, count)
     }
 
     func testIsAdjective(){

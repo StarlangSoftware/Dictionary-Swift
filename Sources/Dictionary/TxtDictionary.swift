@@ -14,9 +14,9 @@ public class TxtDictionary: Dictionary{
     public init(){
         self.__misspelledWords = [:]
         super.init(comparator: { $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedSame})
-        self.filename = "turkish_dictionary.txt"
-        self.__loadFromText(fileName: self.filename)
-        self.__loadMisspelledWords(fileName: "turkish_misspellings.txt")
+        self.filename = "turkish_dictionary"
+        self.__loadFromText()
+        self.__loadMisspelledWords()
     }
 
     public init(fileName: String){
@@ -179,12 +179,10 @@ public class TxtDictionary: Dictionary{
 
     - Parameter fileName : File name input.
     */
-    public func __loadFromText(fileName: String){
-        let thisSourceFile = URL(fileURLWithPath: #file)
-        let thisDirectory = thisSourceFile.deletingLastPathComponent()
-        let url = thisDirectory.appendingPathComponent(fileName)
+    public func __loadFromText(fileName: String = "turkish_dictionary"){
+        let url = Bundle.module.url(forResource: fileName, withExtension: "txt")
         do{
-            let fileContent = try String(contentsOf: url, encoding: .utf8)
+            let fileContent = try String(contentsOf: url!, encoding: .utf8)
             let lines : [String] = fileContent.split(whereSeparator: \.isNewline).map(String.init)
             for line in lines{
                 let wordList : [String] = line.split(separator: " ").map(String.init)
@@ -207,12 +205,10 @@ public class TxtDictionary: Dictionary{
 
     - Parameter fileName : File name input.
     */
-    public func __loadMisspelledWords(fileName: String){
-        let thisSourceFile = URL(fileURLWithPath: #file)
-        let thisDirectory = thisSourceFile.deletingLastPathComponent()
-        let url = thisDirectory.appendingPathComponent(fileName)
+    public func __loadMisspelledWords(fileName: String = "turkish_misspellings"){
+        let url = Bundle.module.url(forResource: fileName, withExtension: "txt")
         do{
-            let fileContent = try String(contentsOf: url, encoding: .utf8)
+            let fileContent = try String(contentsOf: url!, encoding: .utf8)
             let lines : [String] = fileContent.split(whereSeparator: \.isNewline).map(String.init)
             for line in lines{
                 let wordList : [String] = line.split(separator: " ").map(String.init)

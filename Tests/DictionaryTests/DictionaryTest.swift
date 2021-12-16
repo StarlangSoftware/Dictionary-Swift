@@ -9,8 +9,8 @@ final class DictionaryTest: XCTestCase {
 
     override func setUp(){
         self.dictionary = TxtDictionary()
-        self.lowerCaseDictionary = TxtDictionary(fileName: "lowercase.txt")
-        self.mixedCaseDictionary = TxtDictionary(fileName: "mixedcase.txt", misspelledFileName: "turkish_misspellings.txt", comparator: { $0.getName().compare($1.getName(), options: [.caseInsensitive], locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), options: [.caseInsensitive], locale: Locale(identifier: "tr")) == .orderedSame})
+        self.lowerCaseDictionary = TxtDictionary(fileName: "lowercase")
+        self.mixedCaseDictionary = TxtDictionary(fileName: "mixedcase", misspelledFileName: "turkish_misspellings", comparator: { $0.getName().compare($1.getName(), options: [.caseInsensitive], locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), options: [.caseInsensitive], locale: Locale(identifier: "tr")) == .orderedSame})
     }
 
     func testGetWordIndex(){
@@ -35,7 +35,7 @@ final class DictionaryTest: XCTestCase {
     func testSize(){
         XCTAssertEqual(29, self.lowerCaseDictionary.size())
         XCTAssertEqual(58, self.mixedCaseDictionary.size())
-        XCTAssertEqual(62116, self.dictionary.size())
+        XCTAssertEqual(62120, self.dictionary.size())
     }
 
     func testGetWord(){
