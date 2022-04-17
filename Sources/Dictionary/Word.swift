@@ -74,7 +74,15 @@ open class Word : Comparable, Equatable, Hashable{
     public static func charAt(s: String, i: Int) -> Character{
         return s[s.index(s.startIndex, offsetBy: i)];
     }
-    
+
+    public static func substringUntil(s: String, ch: String) -> String{
+        return String(s[..<s.range(of: ch)!.lowerBound])
+    }
+
+    public static func substringFrom(s: String, ch: String) -> String{
+        return String(s[s.range(of: ch)!.upperBound...])
+    }
+
     public static func uppercase(s: String) -> String{
         var result : String = ""
         for i in 0..<s.count{

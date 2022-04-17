@@ -177,6 +177,16 @@ final class WordTest: XCTestCase {
     func testLowercase(){
         XCTAssertEqual(Word.lowercase(s: "ABCDEFGHJKLMNOPRSTUVYZÇÖĞÜŞIİ"), "abcdefghjklmnoprstuvyzçöğüşıi")
     }
+    
+    func testSubstringUntil(){
+        XCTAssertEqual(Word.substringUntil(s: "Ali'nin", ch: "'"), "Ali")
+        XCTAssertEqual(Word.substringUntil(s: "Olcay$Taner$Yıldız", ch: "$"), "Olcay")
+    }
+
+    func testSubstringFrom(){
+        XCTAssertEqual(Word.substringFrom(s: "Ali'nin", ch: "'"), "nin")
+        XCTAssertEqual(Word.substringFrom(s: "Olcay$Taner$Yıldız", ch: "$"), "Taner$Yıldız")
+    }
 
     static var allTests = [
         ("testExample1", testCharCount),
