@@ -134,6 +134,75 @@ open class Word : Comparable, Equatable, Hashable{
     }
 
     /**
+     * The beforeLastVowel method takes a {@link String} stem as an input. It loops through the given stem and returns
+     * the second last vowel.
+        - Parameters:
+            - stem: String input.
+        - Returns: Vowel before the last vowel.
+     */
+    public static func beforeLastVowel(stem: String) -> Character{
+        var before : Int = 1
+        var last : Character = "0"
+        var i : Int = stem.count - 1
+        while i >= 0 {
+            if TurkishLanguage.isVowel(ch: Word.charAt(s: stem, i: i)) {
+                if (before == 1) {
+                    last = Word.charAt(s: stem, i: i)
+                    before -= 1
+                    i -= 1
+                    continue
+                }
+                return Word.charAt(s: stem, i: i)
+            }
+            i -= 1
+        }
+        return last
+    }
+    
+    /**
+     * The lastVowel method takes a {@link String} stem as an input. It loops through the given stem and returns
+     * the last vowel.
+        - Parameters:
+            - stem: String input.
+        - Returns: the last vowel.
+     */
+    public static func lastVowel(stem: String) -> Character{
+        var i : Int = stem.count - 1
+        while i >= 0 {
+            if TurkishLanguage.isVowel(ch: Word.charAt(s: stem, i: i)) {
+                return Word.charAt(s: stem, i: i)
+            }
+            i -= 1
+        }
+        i = stem.count - 1
+        while i >= 0 {
+            if Word.charAt(s: stem, i: i) >= "0" && Word.charAt(s: stem, i: i) <= "9" {
+                return Word.charAt(s: stem, i: i)
+            }
+            i -= 1
+        }
+        return "0"
+    }
+    
+    /**
+     * The lastPhoneme method takes a {@link String} stem as an input. It then returns the last phoneme of the given stem.
+        - Parameters:
+            - stem: String input.
+        - Returns: the last phoneme.
+     */
+    public static func lastPhoneme(stem: String) -> Character{
+        if stem.count == 0 {
+            return " ";
+        }
+        if Word.charAt(s: stem, i: stem.count - 1) != "'" {
+            return Word.charAt(s: stem, i: stem.count - 1)
+        } else {
+            return Word.charAt(s: stem, i: stem.count - 2)
+        }
+    }
+    
+
+    /**
     The isCapital method takes a String surfaceForm as an input and returns true if the character at first index of
     surfaceForm is a capital letter, false otherwise.
 
