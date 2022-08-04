@@ -120,7 +120,7 @@ public class Dictionary{
             } catch {
             }
         }
-        return -lo
+        return -(lo + 1)
     }
 
     /**
@@ -142,7 +142,7 @@ public class Dictionary{
         let word = Word(name: _hash)
         let middle = self.__getPosition(word: word)
         if middle < 0{
-            return -middle
+            return -middle - 1
         } else {
             return middle
         }

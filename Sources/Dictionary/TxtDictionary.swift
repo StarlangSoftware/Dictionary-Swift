@@ -161,7 +161,7 @@ public class TxtDictionary: Dictionary{
             let word = TxtWord(name: name.lowercased())
             word.addFlag(flag: flag)
             let middle = self.__getPosition(word: word)
-            self.words.insert(word, at: -middle)
+            self.words.insert(word, at: -middle - 1)
             return true
         } else {
             let word = self.getWord(name: name.lowercased())

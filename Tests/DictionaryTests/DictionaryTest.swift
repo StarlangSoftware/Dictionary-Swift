@@ -59,6 +59,8 @@ final class DictionaryTest: XCTestCase {
     }
 
     func testGetWordStartingWith(){
+        XCTAssertEqual(0, self.lowerCaseDictionary.getWordStartingWith(_hash: "a"))
+        XCTAssertEqual(1, self.lowerCaseDictionary.getWordStartingWith(_hash: "b"))
         XCTAssertEqual(20, self.lowerCaseDictionary.getWordStartingWith(_hash: "pırasa"))
         XCTAssertEqual(27, self.lowerCaseDictionary.getWordStartingWith(_hash: "veli"))
         XCTAssertEqual(40, self.mixedCaseDictionary.getWordStartingWith(_hash: "Pırasa"))
