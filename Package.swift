@@ -21,7 +21,7 @@ let package = Package(
             name: "Dictionary",
             dependencies: ["Math"],
             resources: [.process("turkish_dictionary.txt"),.process("turkish_misspellings.txt"),
-                        .process("lowercase.txt"),.process("mixedcase.txt")]),
+                        .process("lowercase.txt"),.process("mixedcase.txt"),.process("turkish_morphological_lexicon.txt")]),
         .testTarget(
             name: "DictionaryTests",
             dependencies: ["Dictionary"]),

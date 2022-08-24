@@ -10,6 +10,7 @@ import Foundation
 public class TxtWord : Word, NSCopying{
     
     private var __flags: [String] = []
+    private var __morphology: String = ""
 
     /**
     Another constructor of TxtWord class which takes a String name and a flag as inputs and calls its super class
@@ -53,6 +54,14 @@ public class TxtWord : Word, NSCopying{
     */
     public func removeFlag(flag: String){
         self.__flags.remove(at: self.__flags.firstIndex(of: flag)!)
+    }
+    
+    public func getMorphology()->String{
+        return self.__morphology
+    }
+    
+    public func setMorphology(morphology: String){
+        self.__morphology = morphology
     }
 
     /**

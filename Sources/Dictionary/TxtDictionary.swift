@@ -17,6 +17,7 @@ public class TxtDictionary: Dictionary{
         self.filename = "turkish_dictionary"
         self.__loadFromText()
         self.__loadMisspelledWords()
+        self.__loadMorphologicalLexicon()
     }
 
     public init(fileName: String){
@@ -24,6 +25,7 @@ public class TxtDictionary: Dictionary{
         super.init(comparator: { $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedSame})
         self.filename = fileName
         self.__loadFromText(fileName: self.filename)
+        self.__loadMorphologicalLexicon()
     }
 
     /**
@@ -39,6 +41,7 @@ public class TxtDictionary: Dictionary{
         self.filename = fileName
         self.__loadFromText(fileName: self.filename)
         self.__loadMisspelledWords(fileName: misspelledFileName)
+        self.__loadMorphologicalLexicon()
     }
 
     /**
@@ -214,6 +217,25 @@ public class TxtDictionary: Dictionary{
                 let wordList : [String] = line.split(separator: " ").map(String.init)
                 if wordList.count == 2{
                     self.__misspelledWords[wordList[0]] = wordList[1]
+                }
+            }
+        }catch{
+        }
+    }
+
+    public func __loadMorphologicalLexicon(fileName: String = "turkish_morphological_lexicon"){
+        let url = Bundle.module.url(forResource: fileName, withExtension: "txt")
+        do{
+            let fileContent = try String(contentsOf: url!, encoding: .utf8)
+            let lines : [String] = fileContent.split(whereSeparator: \.isNewline).map(String.init)
+            for line in lines{
+                let wordList : [String] = line.split(separator: " ").map(String.init)
+                if wordList.count == 2{
+                    let word = self.getWord(name: wordList[0])
+                    if word != nil{
+                        let txtWord = word as! TxtWord
+                        txtWord.setMorphology(morphology: wordList[1])
+                    }
                 }
             }
         }catch{

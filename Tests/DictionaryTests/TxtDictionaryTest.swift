@@ -15,6 +15,13 @@ final class TxtDictionaryTest: XCTestCase {
         }
     }
 
+    func testMorphology(){
+        XCTAssertEqual("ab", (dictionary.getWord(name: "ab") as! TxtWord).getMorphology())
+        XCTAssertEqual("çarp+HcH+lHk", (dictionary.getWord(name: "çarpıcılık") as! TxtWord).getMorphology())
+        XCTAssertEqual("aciz+lAş+yAbil+mA", (dictionary.getWord(name: "âcizleşebilme") as! TxtWord).getMorphology())
+        XCTAssertEqual("ak+Hş+GAn+lAş+DHr+HCH+lHk", (dictionary.getWord(name: "akışkanlaştırıcılık") as! TxtWord).getMorphology())
+    }
+
     func testPrepareTrie(){
         let trie : Trie = self.dictionary.prepareTrie()
         XCTAssertTrue(trie.getWordsWithPrefix(surfaceForm: "bana").contains(Word(name: "ben")))
