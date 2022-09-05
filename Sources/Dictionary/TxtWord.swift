@@ -229,6 +229,24 @@ public class TxtWord : Word, NSCopying{
     }
 
     /**
+     The isDuplicate method returns true if flags list contains IS_CODE.
+     
+     - Returns: true if flags list contains IS_CODE.
+     */
+    public func isCode() -> Bool{
+        return self.__flags.contains("IS_CODE")
+    }
+
+    /**
+     The isDuplicate method returns true if flags list contains IS_METRIC.
+     
+     - Returns: true if flags list contains IS_METRIC.
+     */
+    public func isMetric() -> Bool{
+        return self.__flags.contains("IS_METRIC")
+    }
+
+    /**
     The isHeader method returns true if flags list contains IS_HEADER.
 
     - Returns: true if flags list contains IS_HEADER.
