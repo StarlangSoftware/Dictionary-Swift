@@ -82,6 +82,14 @@ open class Word : Comparable, Equatable, Hashable{
     public static func substringFrom(s: String, ch: String) -> String{
         return String(s[s.range(of: ch)!.upperBound...])
     }
+    
+    public static func toCapital(s: String) -> String{
+        var result : String = Word.uppercase(s: String(Word.charAt(s: s, i: 0)))
+        for i in 1..<s.count{
+            result += String(Word.charAt(s: s, i: i))
+        }
+        return result
+    }
 
     public static func uppercase(s: String) -> String{
         var result : String = ""

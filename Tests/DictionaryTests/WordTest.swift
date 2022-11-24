@@ -14,6 +14,15 @@ final class WordTest: XCTestCase {
         XCTAssertEqual(6, word.charCount())
     }
 
+    func testToCapital(){
+        var word : Word = Word(name: "ali")
+        XCTAssertEqual("Ali", Word.toCapital(s: word.getName()))
+        word = Word(name: "ilginç")
+        XCTAssertEqual("İlginç", Word.toCapital(s: word.getName()))
+        word = Word(name: "ç")
+        XCTAssertEqual("Ç", Word.toCapital(s: word.getName()))
+    }
+
     func testIsCapital(){
         XCTAssertFalse(Word.isCapital(surfaceForm: "ali"))
         XCTAssertTrue(Word.isCapital(surfaceForm: "Ali"))
