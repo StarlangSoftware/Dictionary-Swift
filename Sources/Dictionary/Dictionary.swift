@@ -102,7 +102,11 @@ public class Dictionary{
         }
         return maxLength
     }
-
+    
+    /// Checks if a given word exists in the dictionary by performing a binary search on the words array.
+    /// - Parameter word: Searched word
+    /// - Returns: the index of the search word, if it is contained in the words array; otherwise, (-(insertion point) - 1). The
+    /// insertion point is defined as the point at which the word would be inserted into the words array.
     public func __getPosition(word: Word) -> Int{
         var lo : Int = 0
         var hi : Int = self.words.count - 1

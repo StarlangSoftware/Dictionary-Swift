@@ -10,7 +10,10 @@ import Foundation
 public class TxtDictionary: Dictionary{
     
     private var __misspelledWords : [String: String]
-
+    
+    /// Empty constructor of TxtDictionary class. Sets the WordComparator to TurkishWordComparator, loads the
+    /// default Turkish dictionary, Turkish misspellings file and Turkish morphological lexicon, which contains the
+    /// subword units to Turkish root words.
     public init(){
         self.__misspelledWords = [:]
         super.init(comparator: { $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedSame})
@@ -19,7 +22,11 @@ public class TxtDictionary: Dictionary{
         self.__loadMisspelledWords()
         self.__loadMorphologicalLexicon()
     }
-
+    
+    /// Another constructor of {@link TxtDictionary} class which takes a String filename as input.
+    /// And calls its super class Dictionary assigns given filename input to the
+    /// filename variable. Then, it calls loadFromText method with given filename.
+    /// - Parameter fileName: String input.
     public init(fileName: String){
         self.__misspelledWords = [:]
         super.init(comparator: { $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedAscending || $0.getName().compare($1.getName(), locale: Locale(identifier: "tr")) == .orderedSame})
@@ -222,7 +229,11 @@ public class TxtDictionary: Dictionary{
         }catch{
         }
     }
-
+    
+    /// Loads the morphological lexicon of a given language. Only Turkish is currently supported. Morphological lexicon
+    /// contains subwords (possibly meaningful words or metamorphemes) of each root word in the Turkish dictionary. For
+    /// example, abacılık has subwords aba+CH+LHK.
+    /// - Parameter fileName: Morphological lexicon file
     public func __loadMorphologicalLexicon(fileName: String = "turkish_morphological_lexicon"){
         let url = Bundle.module.url(forResource: fileName, withExtension: "txt")
         do{

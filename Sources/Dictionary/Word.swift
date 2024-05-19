@@ -70,19 +70,37 @@ open class Word : Comparable, Equatable, Hashable{
     public func setName(name: String){
         self.name = name
     }
-
+    
+    /// Returns the UTF8 character value at the specified index of an input string
+    /// - Parameters:
+    ///   - s: Input string
+    ///   - i: The index of the character
+    /// - Returns: UTF8 character value at the specified index
     public static func charAt(s: String, i: Int) -> Character{
         return s[s.index(s.startIndex, offsetBy: i)];
     }
-
+    
+    /// Returns a substring until the first occurence of the given character
+    /// - Parameters:
+    ///   - s: Input string
+    ///   - ch: Character until which the substring is formed.
+    /// - Returns: Substring until the first occurrence of the given character
     public static func substringUntil(s: String, ch: String) -> String{
         return String(s[..<s.range(of: ch)!.lowerBound])
     }
-
+    
+    /// Returns a substring from the first occurrence of the given character
+    /// - Parameters:
+    ///   - s: Input string
+    ///   - ch: Character from which the substring is returned
+    /// - Returns: Substring from the first occurrence of the given character
     public static func substringFrom(s: String, ch: String) -> String{
         return String(s[s.range(of: ch)!.upperBound...])
     }
     
+    /// Converts the given string into its capital form
+    /// - Parameter s: Given string which will be converted to its capital form
+    /// - Returns: Capitalized form of the input string.
     public static func toCapital(s: String) -> String{
         var result : String = Word.uppercase(s: String(Word.charAt(s: s, i: 0)))
         for i in 1..<s.count{
@@ -91,6 +109,9 @@ open class Word : Comparable, Equatable, Hashable{
         return result
     }
 
+    /// Returns an uppercase copy of the given input string
+    /// - Parameter s: Input string
+    /// - Returns: Uppercase copy of the input string
     public static func uppercase(s: String) -> String{
         var result : String = ""
         for i in 0..<s.count{
@@ -115,7 +136,10 @@ open class Word : Comparable, Equatable, Hashable{
         }
         return result
     }
-
+    
+    /// Returns a lowercase copy of the given input string
+    /// - Parameter s: Input string
+    /// - Returns: Lowercase copy of the input string
     public static func lowercase(s: String) -> String{
         var result : String = ""
         for i in 0..<s.count{

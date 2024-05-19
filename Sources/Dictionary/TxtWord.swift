@@ -13,22 +13,29 @@ public class TxtWord : Word, NSCopying{
     private var __morphology: String = ""
 
     /**
-    Another constructor of TxtWord class which takes a String name and a flag as inputs and calls its super class
-    Word with given name. Then, creates a new list as flags and calls addFlag method with given flag.
+     A constructor of TxtWord class which takes a String name as an input and calls its super class Word
+    with given name. Then, creates a new array as flags.
 
     - Parameters:
-        - name : String input.
-        - flag : String input.
+        - name : Name of the word.
     */
     public override init(name: String){
         super.init(name: name)
     }
-
+    
+    /// Another constructor of TxtWord class which takes a String name and a flag as inputs and calls its super class Word
+    /// with given name. Then, creates a new {@link ArrayList} as flags and calls addFlag method with given flag.
+    /// - Parameters:
+    ///   - name: Name of the word
+    ///   - flag: Initial flag of the word
     public init(name: String, flag: String){
         super.init(name: name)
         self.__flags.append(flag)
     }
-
+    
+    /// Clone method for the TxtWord class. Creates a copy of current word.
+    /// - Parameter zone: -
+    /// - Returns: Copy of the TxtWord
     public func copy(with zone: NSZone? = nil) -> Any {
         let copy : TxtWord = TxtWord(name: self.getName())
         copy.__flags = []
@@ -56,10 +63,14 @@ public class TxtWord : Word, NSCopying{
         self.__flags.remove(at: self.__flags.firstIndex(of: flag)!)
     }
     
+    /// Accessor for the inner morphology of the word.
+    /// - Returns: Inner morphology of the word.
     public func getMorphology()->String{
         return self.__morphology
     }
     
+    /// Mutator for the inner morphology of the word.
+    /// - Parameter morphology: New inner morphology of the word.
     public func setMorphology(morphology: String){
         self.__morphology = morphology
     }
