@@ -107,7 +107,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(9687, count)
+        XCTAssertEqual(11006, count)
     }
 
     func testIsPronoun(){
@@ -283,7 +283,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(315, count)
+        XCTAssertEqual(320, count)
     }
 
     func testObeysAndNotObeysVowelHarmonyDuringAgglutination(){
@@ -305,7 +305,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5530, count)
+        XCTAssertEqual(6939, count)
     }
 
     func testRootSoftenAndNotSoftenDuringSuffixation(){
@@ -316,7 +316,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(14, count)
+        XCTAssertEqual(15, count)
     }
 
     func testVerbSoftenDuringSuffixation(){
@@ -338,7 +338,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(5444, count)
+        XCTAssertEqual(6853, count)
     }
 
     func testEndingKChangesIntoG(){
