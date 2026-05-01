@@ -52,7 +52,7 @@ final class TxtWordTest: XCTestCase {
                 count = count + 1
             }
         }
-        XCTAssertEqual(30603, count)
+        XCTAssertEqual(30625, count)
     }
 
     func testIsPassive(){
